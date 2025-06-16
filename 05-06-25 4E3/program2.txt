@@ -1,0 +1,73 @@
+class Main {
+    public static void main(String[] args) {
+        Tee t=new Tree(new int[] {1,2,-1,-1,3,-1,-1});
+        t.preOrder();
+        System.out.println();
+        t.inOrder();
+        System.out.println();
+        t.postOrder();
+        System.out.println();
+    }
+    }
+    class Node{
+        int data;
+        Node left;
+        Node right;
+        Node(int data){
+            this.data=data;
+            this.left=null;
+            this.right=null;
+        }
+    }
+    class Tree{
+        Node root;
+        int index =-1;
+        Tree(int[]nodes){
+            this.root=buildTreeUsingArray(nodes);
+            System.out.println(index);
+        }
+    }
+    public class buildTreeUsingArray(int[]nodes){
+        index++;
+        if(index>=nodes.length){
+            return null;
+        }
+        if(nodes[index]==-1)
+        return null;
+        Node newNode=new Node(nodes[index]);
+        newNode.left=buildTreeUsingArray(nodes);
+        newNode.right=buildTreeUsingArray(nodes);
+        return newNode;
+         }
+    } 
+    class Tree{
+        public void preOrder(){
+            Node temp=this>root;
+            preOrderHelper(temp);
+        }
+        private void preOrderHelper(Node temp){
+            if(temp==null)return;
+            System.out.print(temp.data+" ");
+            preOrderHelper(temp.left);
+            preOrederHelper(temp.right);
+        }
+        public void inOrder();
+        Node temp=root;
+        inOrderHelper(temp);
+    }
+    public void inOrderHelper(Node temp){
+        if(temp==null)return;
+        inOrderHelper(temp.left);
+        System.out.print(temp.data+" ");
+        inOrderHelper(temp.right);
+    }
+    }
+    public void postOrder(){
+        Node temp=root;
+        postOrderHelper(Node temp){
+            if(temp==null)return;
+            postOrderHelper(temp.left);
+            System.out.print(temp.data+" ");
+            postOrderHelper(temp.right);
+        }
+    }
